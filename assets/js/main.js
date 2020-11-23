@@ -22,14 +22,32 @@
 
 // Il computer deve generare 16 numeri casuali tra 1 e 100.
 listaSedici = [];
-    for(i= 0; i <= 15; i++){
-        var num;
-        while ( listaSedici.includes( num = Math.floor(Math.random()*20) + 1 ) );
-        listaSedici[i] = num;
-    }
+var num;
+
+for(i= 0; i <= 15; i++){
+
+    while ( listaSedici.includes( num = Math.floor(Math.random()*20) + 1 ) );
+    listaSedici[i] = num;
+}
 console.log(listaSedici);
 
-do{
+// funzione che verifica la presenza di un elemento all'interno di un array
+function arrayIndexOf(array, search) {
+	var indice; 
+	for (indice in array) {
+		if (array[indice] == search)
+			return indice;
+	}	
+	return -1;
+}
+
+var ricerca = -1
+while (ricerca == -1) {
     var numeroUtente = prompt("Inserisci un numero")
-    numeroUtente == num
-} while(numeroUtente != num)
+    var ricerca = arrayIndexOf(listaSedici, numeroUtente) 
+    console.log(ricerca);
+    ricerca != -1
+}
+
+
+    
