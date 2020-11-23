@@ -24,8 +24,12 @@
 listaSedici = [];
     for(i= 0; i <= 15; i++){
         var num;
-        while ( listaSedici.includes( num = Math.floor(Math.random()*100) + 1 ) );
+        while ( listaSedici.includes( num = Math.floor(Math.random()*20) + 1 ) );
         listaSedici[i] = num;
     }
 console.log(listaSedici);
 
+do{
+    var numeroUtente = prompt("Inserisci un numero")
+    numeroUtente == num
+} while(numeroUtente != num)
