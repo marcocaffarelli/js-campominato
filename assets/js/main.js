@@ -21,8 +21,11 @@
 // Ricordatevi che se non sappiamo quante volte dobbiamo fare una cosa ci serve… :stuck_out_tongue:
 
 // Il computer deve generare 16 numeri casuali tra 1 e 100.
-function numeroRandom(min, max) {
-    return Math.floor(Math.random()* (max - min) + min);
-};
+listaSedici = [];
+    for(i= 0; i <= 15; i++){
+        var num;
+        while ( listaSedici.includes( num = Math.floor(Math.random()*100) + 1 ) );
+        listaSedici[i] = num;
+    }
+console.log(listaSedici);
 
-numeroComputer = Number(numeroRandom(1, 100));
