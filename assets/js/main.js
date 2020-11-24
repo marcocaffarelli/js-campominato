@@ -27,48 +27,45 @@ var num;
 for(i= 0; i <= 15; i++){
     while ( listaSedici.includes( num = Math.floor(Math.random()*100) + 1 ) );
     listaSedici[i] = num;
-}
-console.log(listaSedici);
+};
+//console.log(listaSedici);
 
 // funzione che verifica la presenza di un elemento all'interno di un array
 function arrayIndexOf(array, search) {
 	var indice; 
-	for (indice in array) {
+	for (indice = 0; indice < array.length; indice++) {
 		if (array[indice] == search)
 			return indice;
 	}	
 	return -1;
-}
+};
 
 //lista numeri inseriti dall'utente
 listaNumeriUtente = [];
 
-//ciclo for che genera il gioco
-
 //var possibilita = 100 - 16;
-var cicli = erroriUtente(numeroUtente, listaNumeriUtente);
-var possibilita = 5;
-for (var i= 0; i<= possibilita; i++) {
+var possibilita = 83;
 
+//ciclo for che genera il gioco
+for (var i= 0; i<= possibilita; i++) {
     var numeroUtente = prompt("Inserisci un numero da 1 e 100");
-    cicli
+    numeroUtente = erroriUtente(numeroUtente, listaNumeriUtente);
     if (arrayIndexOf(listaSedici, numeroUtente) !== -1) {
-    console.log("hai perso");
+    console.log("Hai perso");
     break;
     };
-    
     listaNumeriUtente.push(numeroUtente);
 };
+
 // Aggiunti messaggi a seconda dell'esito del gioco
-if (listaNumeriUtente.length === 6) {
+if (listaNumeriUtente.length === 84) {
     console.log("Complimenti sei riuscito a completare il Gioco");
 } else {
-    console.log(listaNumeriUtente.length + " questo è il numero delle volte in cui hai evitato una bomba");
+    console.log(listaNumeriUtente.length + " questo è il numero delle volte che hai evitato una bomba");
 };
 
-
+//creata funzione contenente le casistiche in cui l'utente scrive qualcosa diverso di un numero compreso tra 1 e 100
 function erroriUtente(numero, lista) {
-    var numero = prompt("Inserisci un numero da 1 e 100");
     while ((numero != Number(numero)) || (numero < 1 || numero > 100) || (arrayIndexOf(lista, numero) !== -1)) {
         if (numero != Number(numero)) {
             alert(" Devi inserire un numero");
@@ -80,6 +77,6 @@ function erroriUtente(numero, lista) {
             alert(" Il numero è già stato inserito, inserisci un numero diverso");
             numero = prompt("Inserisci un numero da 1 e 100");
         }
-        
     }
-}
+    return numero
+};
