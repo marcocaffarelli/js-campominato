@@ -53,10 +53,19 @@ for (var i= 0; i<= possibilita; i++) {
     console.log("hai perso");
     break;
     }
+    //ciclo che verifica se l'utente ha scritto un numero
+    while (numeroUtente != Number(numeroUtente)) {
+        alert(" Devi inserire un numero");
+        numeroUtente = prompt("Inserisci un numero da 1 a 100");
+    };
     //ciclo che verifica se il numero inserito è compreso tra 1 e 100
     while(numeroUtente < 1 || numeroUtente > 100){
         alert(" Il numero non è compreso tra 1 e 100");
         numeroUtente = prompt("Inserisci un numero da 1 a 100");
+        while (numeroUtente != Number(numeroUtente)) {
+            alert(" Devi inserire un numero");
+            numeroUtente = prompt("Inserisci un numero da 1 a 100");
+        }
     }
     //ciclo che verifica che l'utente non ripeta lo stesso numero
     while(arrayIndexOf(listaNumeriUtente, numeroUtente) !== -1) {
@@ -65,6 +74,10 @@ for (var i= 0; i<= possibilita; i++) {
         while(numeroUtente < 1 || numeroUtente > 100){
             alert(" Il numero non è compreso tra 1 e 100");
             numeroUtente = prompt("Inserisci un numero da 1 a 100");
+            while (numeroUtente != Number(numeroUtente)) {
+                alert(" Devi inserire un numero");
+                numeroUtente = prompt("Inserisci un numero da 1 a 100");
+            }
         }
     }
     listaNumeriUtente.push(numeroUtente);
