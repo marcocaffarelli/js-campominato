@@ -46,42 +46,19 @@ listaNumeriUtente = [];
 //ciclo for che genera il gioco
 
 //var possibilita = 100 - 16;
+var cicli = erroriUtente(numeroUtente, listaNumeriUtente);
 var possibilita = 5;
 for (var i= 0; i<= possibilita; i++) {
+
     var numeroUtente = prompt("Inserisci un numero da 1 e 100");
+    cicli
     if (arrayIndexOf(listaSedici, numeroUtente) !== -1) {
     console.log("hai perso");
     break;
-    }
-    //ciclo che verifica se l'utente ha scritto un numero
-    while (numeroUtente != Number(numeroUtente)) {
-        alert(" Devi inserire un numero");
-        numeroUtente = prompt("Inserisci un numero da 1 a 100");
     };
-    //ciclo che verifica se il numero inserito è compreso tra 1 e 100
-    while(numeroUtente < 1 || numeroUtente > 100){
-        alert(" Il numero non è compreso tra 1 e 100");
-        numeroUtente = prompt("Inserisci un numero da 1 a 100");
-        while (numeroUtente != Number(numeroUtente)) {
-            alert(" Devi inserire un numero");
-            numeroUtente = prompt("Inserisci un numero da 1 a 100");
-        }
-    }
-    //ciclo che verifica che l'utente non ripeta lo stesso numero
-    while(arrayIndexOf(listaNumeriUtente, numeroUtente) !== -1) {
-        alert(" Il numero è già stato inserito, inserisci un numero diverso");
-        numeroUtente = prompt("Inserisci un numero da 1 a 100");
-        while(numeroUtente < 1 || numeroUtente > 100){
-            alert(" Il numero non è compreso tra 1 e 100");
-            numeroUtente = prompt("Inserisci un numero da 1 a 100");
-            while (numeroUtente != Number(numeroUtente)) {
-                alert(" Devi inserire un numero");
-                numeroUtente = prompt("Inserisci un numero da 1 a 100");
-            }
-        }
-    }
+    
     listaNumeriUtente.push(numeroUtente);
-}
+};
 // Aggiunti messaggi a seconda dell'esito del gioco
 if (listaNumeriUtente.length === 6) {
     console.log("Complimenti sei riuscito a completare il Gioco");
@@ -90,3 +67,19 @@ if (listaNumeriUtente.length === 6) {
 };
 
 
+function erroriUtente(numero, lista) {
+    var numero = prompt("Inserisci un numero da 1 e 100");
+    while ((numero != Number(numero)) || (numero < 1 || numero > 100) || (arrayIndexOf(lista, numero) !== -1)) {
+        if (numero != Number(numero)) {
+            alert(" Devi inserire un numero");
+            numero = prompt("Inserisci un numero da 1 e 100")
+        } else if(numero < 1 || numero > 100){
+            alert(" Il numero non è compreso tra 1 e 100");
+            numero = prompt("Inserisci un numero da 1 e 100");
+        } else if(arrayIndexOf(lista, numero) !== -1){
+            alert(" Il numero è già stato inserito, inserisci un numero diverso");
+            numero = prompt("Inserisci un numero da 1 e 100");
+        }
+        
+    }
+}
