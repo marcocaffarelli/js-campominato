@@ -48,14 +48,20 @@ listaNumeriUtente = [];
 //var possibilita = 100 - 16;
 var possibilita = 5;
 for (var i= 0; i<= possibilita; i++) {
-    var numeroUtente = prompt("Inserisci un numero");
+    var numeroUtente = prompt("Inserisci un numero da 1 e 100");
     if (arrayIndexOf(listaSedici, numeroUtente) !== -1) {
     console.log("hai perso");
     break;
     }
+    //ciclo che verifica se il numero inserito è compreso tra 1 e 100
+    while(numeroUtente < 1 || numeroUtente > 100){
+        alert(" Il numero non è compreso tra 1 e 100");
+        numeroUtente = prompt("Inserisci un numero da 1 a 100");
+    }
+    //ciclo che verifica che l'utente non ripeta lo stesso numero
     while(arrayIndexOf(listaNumeriUtente, numeroUtente) !== -1) {
         alert(" Il numero è già stato inserito, inserisci un numero diverso");
-        numeroUtente = prompt("Inserisci un numero");
+        numeroUtente = prompt("Inserisci un numero da 1 a 100");
     }
     listaNumeriUtente.push(numeroUtente);
 }
