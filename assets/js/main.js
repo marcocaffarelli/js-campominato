@@ -54,12 +54,16 @@ for (var i= 0; i<= possibilita; i++) {
     break;
     }
     while(arrayIndexOf(listaNumeriUtente, numeroUtente) !== -1) {
-        alert(" Il numero è già inserito");
+        alert(" Il numero è già stato inserito, inserisci un numero diverso");
         numeroUtente = prompt("Inserisci un numero");
     }
     listaNumeriUtente.push(numeroUtente);
 }
-console.log(listaNumeriUtente);
-
+// Aggiunti messaggi a seconda dell'esito del gioco
+if (listaNumeriUtente.length === 6) {
+    console.log("Complimenti sei riuscito a completare il Gioco");
+} else {
+    console.log(listaNumeriUtente.length + " questo è il numero delle volte in cui hai evitato una bomba");
+};
 
 
