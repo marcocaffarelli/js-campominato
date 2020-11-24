@@ -23,10 +23,9 @@
 // Il computer deve generare 16 numeri casuali tra 1 e 100.
 listaSedici = [];
 var num;
-
+//ciclo for per generre 16 numeri casuali
 for(i= 0; i <= 15; i++){
-
-    while ( listaSedici.includes( num = Math.floor(Math.random()*20) + 1 ) );
+    while ( listaSedici.includes( num = Math.floor(Math.random()*100) + 1 ) );
     listaSedici[i] = num;
 }
 console.log(listaSedici);
@@ -40,16 +39,27 @@ function arrayIndexOf(array, search) {
 	}	
 	return -1;
 }
-listaNumeriUtente = []
-var ricerca = -1
-while (ricerca == -1 && (100 - (listaSedici + listaNumeriUtente) = 0)) {
-    var numeroUtente = prompt("Inserisci un numero")
-    var ricerca = arrayIndexOf(listaSedici, numeroUtente)
-        listaNumeriUtente.includes(numeroUtente);
-    
-    ricerca != -1 || (100 - (listaSedici + listaNumeriUtente) = 0)    
+
+//lista numeri inseriti dall'utente
+listaNumeriUtente = [];
+
+//ciclo for che genera il gioco
+
+//var possibilita = 100 - 16;
+var possibilita = 5;
+for (var i= 0; i<= possibilita; i++) {
+    var numeroUtente = prompt("Inserisci un numero");
+    if (arrayIndexOf(listaSedici, numeroUtente) !== -1) {
+    console.log("hai perso");
+    break;
+    }
+    while(arrayIndexOf(listaNumeriUtente, numeroUtente) !== -1) {
+        alert(" Il numero è già inserito");
+        numeroUtente = prompt("Inserisci un numero");
+    }
+    listaNumeriUtente.push(numeroUtente);
 }
 console.log(listaNumeriUtente);
-// 100 - listaNumeriUtente + listaSedici = 0 deve terminare 
+
 
 
