@@ -51,7 +51,7 @@ for (var i= 0; i<= possibilita; i++) {
     var numeroUtente = prompt("Inserisci un numero da 1 e 100");
     numeroUtente = erroriUtente(numeroUtente, listaNumeriUtente);
     if (arrayIndexOf(listaSedici, numeroUtente) !== -1) {
-    console.log("Hai perso");
+    alert("Hai perso");
     break;
     };
     listaNumeriUtente.push(numeroUtente);
@@ -59,9 +59,9 @@ for (var i= 0; i<= possibilita; i++) {
 
 // Aggiunti messaggi a seconda dell'esito del gioco
 if (listaNumeriUtente.length === 84) {
-    console.log("Complimenti sei riuscito a completare il Gioco");
+    alert("Complimenti sei riuscito a completare il Gioco");
 } else {
-    console.log(listaNumeriUtente.length + " questo è il numero delle volte che hai evitato una bomba");
+    alert(listaNumeriUtente.length + " questo è il numero delle volte che hai evitato una bomba");
 };
 
 //creata funzione contenente le casistiche in cui l'utente scrive qualcosa diverso di un numero compreso tra 1 e 100
