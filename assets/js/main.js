@@ -40,14 +40,16 @@ function arrayIndexOf(array, search) {
 	}	
 	return -1;
 }
-
+listaNumeriUtente = []
 var ricerca = -1
-while (ricerca == -1) {
+while (ricerca == -1 && (100 - (listaSedici + listaNumeriUtente) = 0)) {
     var numeroUtente = prompt("Inserisci un numero")
-    var ricerca = arrayIndexOf(listaSedici, numeroUtente) 
-    console.log(ricerca);
-    ricerca != -1
-}
-
-
+    var ricerca = arrayIndexOf(listaSedici, numeroUtente)
+        listaNumeriUtente.includes(numeroUtente);
     
+    ricerca != -1 || (100 - (listaSedici + listaNumeriUtente) = 0)    
+}
+console.log(listaNumeriUtente);
+// 100 - listaNumeriUtente + listaSedici = 0 deve terminare 
+
+
