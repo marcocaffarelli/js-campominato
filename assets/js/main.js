@@ -6,23 +6,11 @@
 // Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero.
 // La partita termina quando il giocatore inserisce un numero “vietato” o raggiunge il numero massimo possibile di numeri consentiti.
 // Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
-// BONUS: (da fare solo se funziona tutto il resto)
-// all’inizio il software richiede anche una difficoltà all’utente che cambia il range di numeri casuali:
-// con difficoltà 0 => tra 1 e 100
-// con difficoltà 1 =>  tra 1 e 80
-// con difficoltà 2 => tra 1 e 50
-// Consigli del giorno: :party_wizard:
-// Scriviamo prima cosa vogliamo fare passo passo in italiano, dividiamo il lavoro in micro problemi.
-// Ad esempio:
-// Di cosa ho bisogno per generare i numeri?
-// Proviamo sempre prima con dei console.log() per capire se stiamo ricevendo i dati giusti.
-// Proviamo prima con pochi numeri, inserire 86 numeri ogni volta potrebbe essere un po’ scocciante :wink:
-// Le validazioni e i controlli possiamo farli anche in un secondo momento.
-// Ricordatevi che se non sappiamo quante volte dobbiamo fare una cosa ci serve… :stuck_out_tongue:
 
+// Lista variabilii
+var listaSedici, num, listaNumeriUtente, possibilita, i, numeroUtente
 // Il computer deve generare 16 numeri casuali tra 1 e 100.
 listaSedici = [];
-var num;
 //ciclo for per generre 16 numeri casuali
 for(i= 0; i <= 15; i++){
     while ( listaSedici.includes( num = Math.floor(Math.random()*100) + 1 ) );
@@ -43,12 +31,12 @@ function arrayIndexOf(array, search) {
 //lista numeri inseriti dall'utente
 listaNumeriUtente = [];
 
-//var possibilita = 100 - 16;
-var possibilita = 83;
+//var possibilita
+possibilita = 83;
 
 //ciclo for che genera il gioco
-for (var i= 0; i<= possibilita; i++) {
-    var numeroUtente = prompt("Inserisci un numero da 1 e 100");
+for (i= 0; i<= possibilita; i++) {
+    numeroUtente = prompt("Inserisci un numero da 1 e 100");
     numeroUtente = erroriUtente(numeroUtente, listaNumeriUtente);
     if (arrayIndexOf(listaSedici, numeroUtente) !== -1) {
     alert("Hai perso");
